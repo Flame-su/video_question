@@ -146,7 +146,7 @@
                     <text class="s-audio-node"></text>
                 </p>
             </div>
-            <button class="submit">提交</button>
+            <!-- <button class="submit">提交</button> -->
         </div>
     </div>
 
@@ -270,32 +270,5 @@
             $(this).parent().remove();
         }
     })
-    //提交
-    $(".submit").click(function () {
-        console.log(s_video, "------", sid)
-        let data = {}
-        let s = {}
-        let t = {}
-        s["video"] = s_video
-        s["audio"] = s_audio
-        t["video"] = t_video
-        t["audio"] = t_audio
-        data["sid"] = sid
-        data["s"] = s
-        data["t"] = t
-        console.log(data, "----")
-        $.ajax({
-            url: 'http://stat-api.xiongmaopeilian.com/classroom_stat/mark_media_issue/panda_product',
-            data: JSON.stringify(data),
-            type: "POST",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (res) {
-                // alert()
-            }
-        })
-        // $.post("http://stat-api.xiongmaopeilian.com/classroom_stat/mark_media_issue/panda_product", data, function (res) {
 
-        // })
-    })
 </script>
